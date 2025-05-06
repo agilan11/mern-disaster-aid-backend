@@ -18,22 +18,22 @@ router.get("/", jwtCheck, jwtParse, MySupplyshedController.getMySupplyshed);
 
 
 router.post(
-    "/",
-    upload.single("imageFile"),
-    validateMySupplyshedRequest,
-    jwtCheck,
-    jwtParse,
-    MySupplyshedController.createMySupplyshed
-  );
+  "/",
+  jwtCheck,
+  jwtParse,
+  upload.single("imageFile"),
+  validateMySupplyshedRequest,
+  MySupplyshedController.createMySupplyshed
+);
 
-  router.put(
-    "/",
-    upload.single("imageFile"),
-    validateMySupplyshedRequest,
-    jwtCheck,
-    jwtParse,
-    MySupplyshedController.updateMySupplyshed
-  );
-  
+router.put(
+  "/",
+  jwtCheck,
+  jwtParse,
+  upload.single("imageFile"),
+  validateMySupplyshedRequest,
+  MySupplyshedController.updateMySupplyshed
+);
+
 
   export default router;
