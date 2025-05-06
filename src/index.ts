@@ -18,7 +18,11 @@ mongoose
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://mern-disaster-aid-frontend.onrender.com',
+  credentials: true,
+}));
+
 
 app.use(express.json());
 
